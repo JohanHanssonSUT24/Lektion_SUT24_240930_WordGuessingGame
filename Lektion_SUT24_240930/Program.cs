@@ -5,7 +5,6 @@
         static string[] words = { "apple", "banana", "cherry", "date", "elderberry", "house", "mouse", "nationalencyklopedin" };
         static Random random = new Random();
         static int highScore = int.MaxValue;
-        static string wordToGuess = "";
 
         static void Main(string[] args)
         {
