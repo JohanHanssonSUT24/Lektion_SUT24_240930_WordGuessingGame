@@ -12,7 +12,7 @@
             while (true)
             {
                 Console.WriteLine("\nWord Guessing Game");
-                Console.WriteLine("1. Play singelplayer");
+                Console.WriteLine("1. Play singleplayer");
                 Console.WriteLine("2. Play multiplayer ");
                 Console.WriteLine("3. Exit");
                 Console.Write("Enter your choice: ");
@@ -21,16 +21,12 @@
 
                 if (choice == "1")
                 {
-                    
                     PlayGame(words[random.Next(words.Length)]);
                 }
                 else if (choice == "2")
                 {
                     Console.Write("Enter a word:");
                     PlayGame(Console.ReadLine());
-                    
-
-
                 }
                 else if (choice == "3")
                 {
@@ -46,7 +42,6 @@
         
         static void PlayGame(string wordToGuess)
         {
-            
             char[] guessedWord = new char[wordToGuess.Length];
             for (int i = 0; i < guessedWord.Length; i++)
             {
@@ -57,7 +52,6 @@
             Console.Clear();
             while (attemptsLeft > 0)
             {
-                
                 Console.WriteLine($"\nWord: {new string(guessedWord)}");
                 Console.WriteLine($"Attempts left: {attemptsLeft}");
                 Console.Write("Guess a letter: ");
@@ -91,20 +85,16 @@
 
                 if (!correctGuess && attemptsLeft == 3)
                 {
-                    
                     Console.WriteLine("Do you want to quit? [Y] or [N]");
                     string userInput = Console.ReadLine().ToUpper();
 
-                    
                     if ( userInput == "Y")
                     {
-   
                         break;
                     }
                     else if (userInput == "N")
                     {
                         Console.WriteLine("Keep on playing.");
-                        
                     }
   
                 }
