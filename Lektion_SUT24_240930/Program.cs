@@ -94,6 +94,10 @@
                     {
                         Console.WriteLine("Keep on playing.");
                     }
+                    else
+                    {
+                        Console.WriteLine("Invalid choice. The game proceeds...");
+                    }
   
                 }
 
@@ -102,7 +106,8 @@
                     Console.WriteLine($"Congratulations! You guessed the word: {wordToGuess}");
                     if ((6 - attemptsLeft) < highScore) { highScore = (6 - attemptsLeft); }
                     Console.WriteLine($"\nYour new highscore is: {highScore + 1}");
-
+                    Console.ReadKey();
+                    Console.Clear();
                     return;
                 }
             }
