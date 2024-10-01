@@ -25,7 +25,7 @@
                 else if (choice == "2")
                 {
                     Console.Write("Enter a word:");
-                    PlayGame(Console.ReadLine());
+                    PlayGame(Console.ReadLine().ToLower());
                 }
                 else if (choice == "3")
                 {
@@ -38,7 +38,6 @@
             }
         }
 
-        
         static void PlayGame(string wordToGuess)
         {
             char[] guessedWord = new char[wordToGuess.Length];
@@ -55,7 +54,7 @@
                 Console.WriteLine($"Attempts left: {attemptsLeft}");
                 Console.Write("Guess a letter: ");
                 
-                string input = Console.ReadLine();
+                string input = Console.ReadLine().ToLower();
                 bool result = input.All(Char.IsLetter);
                 if (string.IsNullOrEmpty(input) || input.Length > 1 || !input.All(Char.IsLetter))
                 {
@@ -102,7 +101,7 @@
                 {
                     Console.WriteLine($"Congratulations! You guessed the word: {wordToGuess}");
                     if ((6 - attemptsLeft) < highScore) { highScore = (6 - attemptsLeft); }
-                    Console.WriteLine($"\nYour new highscore is: {highScore}");
+                    Console.WriteLine($"\nYour new highscore is: {highScore + 1}");
 
                     return;
                 }
